@@ -1,10 +1,10 @@
 'use client';
 
-import { createClient } from '@/utils/supabase/server';
+import { createClient } from '@/utils/supabase/client';
 import { Button } from '@/components/ui/button';
 import { Github } from 'lucide-react';
 import { usePathname } from 'next/navigation';
-import next from 'next';
+
 
 export default function LogInForm() {
     const  pathname  = usePathname();
