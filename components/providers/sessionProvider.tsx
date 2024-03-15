@@ -1,9 +1,10 @@
+"use client"
 import { useEffect } from "react"
-import { createClient } from "@/utils/supabase/server";
+import { createClient } from "@/utils/supabase/client";
 import { useUser } from "@/utils/store/user";
 
 
-export default function sessionProvider(){
+export default function SessionProvider(): JSX.Element{
 
     const setUser = useUser((state) => state.setUser)
 
