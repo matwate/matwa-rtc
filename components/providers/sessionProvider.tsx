@@ -12,6 +12,7 @@ export default function SessionProvider(): JSX.Element{
 
     const readUserSession = async () => {
         const {data} = await supabase.auth.getSession()
+        console.log(data)
         setUser(data.session?.user)
     }
 

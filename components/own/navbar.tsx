@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { useUser } from '@/utils/store/user';
 import Link from 'next/link';
 import SessionProvider from '@/components/providers/sessionProvider';
-import { Badge } from '@/components/ui/badge';
+import ProfileMenu from './ProfileMenu';
 export default function NavBar(): JSX.Element {
 	const user = useUser((state) => state.user);
 
@@ -17,13 +17,7 @@ export default function NavBar(): JSX.Element {
 				<div>
 					{user ? (
 						<div>
-							<Badge variant={'secondary'}>
-								<Button
-									asChild
-									variant={'secondary'}>
-									<Link href='/dashboard'>Dashboard</Link>
-								</Button>
-							</Badge>
+							<ProfileMenu />
 						</div>
 					) : (
 						<Link href='/login'>
