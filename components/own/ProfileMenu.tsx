@@ -10,9 +10,11 @@ export default function ProfileMenu(): JSX.Element {
     const supabase = createClient();
 
 	const user = useUser((state) => state.user);
+	const setUser = useUser((state) => state.setUser)
 
     const handleLogout = async () => {
         await supabase.auth.signOut();
+		setUser(undefined)
     }
 
 	return (
