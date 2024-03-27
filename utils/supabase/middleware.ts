@@ -56,5 +56,16 @@ export async function updateSession(request: NextRequest) {
 
   await supabase.auth.getUser()
   
+  const {data} = await supabase.auth.getSession()
+
+  if(data.session){
+
+
+  }else{
+    return NextResponse.redirect( new URL("/login", request.url))
+  }
+
+
+
   return response
 }
